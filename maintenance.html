@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Under Maintenance - LymaShop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <style>
+    :root {
+      --primary-color: #3a86ff;
+      --primary-dark: #0056b3;
+      --secondary-color: #ff6b6b;
+      --light-bg: #f9f9f9;
+      --dark-bg: #121212;
+      --light-card: #ffffff;
+      --dark-card: #1e1e1e;
+      --light-text: #333333;
+      --dark-text: #e0e0e0;
+      --border-light: #dddddd;
+      --border-dark: #444444;
+      --transition-speed: 0.3s;
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --border-radius: 8px;
+      --header-height: 120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-bg);
+      color: var(--light-text);
+      transition: background-color var(--transition-speed) ease, 
+                  color var(--transition-speed) ease;
+      padding-top: var(--header-height);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--primary-color);
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--primary-dark);
+    }
+
+    .dark-mode {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+    }
+
+    /* Header styles */
+    header {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .top-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      border-bottom: 1px solid var(--border-light);
+      background-color: var(--light-card);
+      transition: background-color var(--transition-speed) ease, 
+                  border-color var(--transition-speed) ease;
+    }
+
+    .dark-mode .top-header {
+      background-color: var(--dark-card);
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .top-header .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: var(--primary-color);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo i {
+      margin-right: 8px;
+      font-size: 0.9em;
+    }
+
+    .top-header .controls {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: var(--border-radius);
+      font-weight: 500;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--box-shadow);
+    }
+
+    /* Maintenance Content Styles */
+    .maintenance-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 60vh;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .maintenance-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .maintenance-subtitle {
+      font-size: 1.8rem;
+      margin: 1rem 0;
+      color: var(--secondary-color);
+    }
+
+    .maintenance-message {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    .maintenance-image {
+      width: 220px;
+      height: 220px;
+      margin-bottom: 2rem;
+      animation: spin 10s linear infinite;
+      position: relative;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .progress-container {
+      width: 100%;
+      max-width: 500px;
+      margin: 2rem 0;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background-color: var(--border-light);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dark-mode .progress-bar {
+      background-color: var(--border-dark);
+    }
+
+    .progress-fill {
+      position: absolute;
+      height: 100%;
+      width: 70%;
+      background-color: var(--primary-color);
+      border-radius: 4px;
+      animation: progress 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes progress {
+      0% { width: 30%; }
+      100% { width: 70%; }
+    }
+
+    .timer {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      font-weight: bold;
+    }
+
+    .contact-info {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: var(--light-card);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      transition: background-color var(--transition-speed) ease;
+    }
+
+    .dark-mode .contact-info {
+      background-color: var(--dark-card);
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+
+    .maintenance-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .email-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .email-input {
+      padding: 12px;
+      border: 1px solid var(--border-light);
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      width: 100%;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .dark-mode .email-input {
+      background-color: var(--dark-card);
+      border-color: var(--border-dark);
+      color: var(--dark-text);
+    }
+
+    .email-input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(58, 134, 255, 0.2);
+    }
+
+    .notification-button {
+      padding: 12px 24px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: var(--border-radius);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .notification-button:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: var(--box-shadow);
+      color: white;
+    }
+
+    .notification-button:disabled {
+      opacity: 0.7;
+      transform: none;
+      cursor: not-allowed;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      top: calc(var(--header-height) + 20px);
+      right: 20px;
+      background-color: #333;
+      color: white;
+      padding: 12px 20px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .toast.success {
+      background-color: #28a745;
+    }
+
+    .toast.error {
+      background-color: #dc3545;
+    }
+
+    /* Animated Tools */
+    .tools-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin-bottom: 2rem;
+    }
+
+    .tool {
+      position: absolute;
+      transform-origin: center;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .tool:nth-child(1) {
+      animation-delay: 0s;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .tool:nth-child(2) {
+      animation-delay: 1s;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+
+    .tool:nth-child(3) {
+      animation-delay: 2s;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .tool:nth-child(4) {
+      animation-delay: 3s;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px) translateX(0px); }
+      25% { transform: translateY(-10px) translateX(5px); }
+      50% { transform: translateY(0px) translateX(10px); }
+      75% { transform: translateY(10px) translateX(5px); }
+      100% { transform: translateY(0px) translateX(0px); }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding-top: 100px;
+      }
+
+      .top-header {
+        padding: 10px 15px;
+      }
+
+      .maintenance-title {
+        font-size: 2rem;
+      }
+
+      .maintenance-subtitle {
+        font-size: 1.5rem;
+      }
+
+      .tools-container {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="top-header">
+      <div class="logo">Lyma Shop</div>
+      <div class="controls">
+        <button id="theme-toggle" class="btn btn-primary"><i class="fas fa-moon"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <section class="maintenance-container animate__animated animate__fadeIn">
+      <h1 class="maintenance-title">Site Under Maintenance</h1>
+      <h2 class="maintenance-subtitle">We're making things better!</h2>
+      <p class="maintenance-message">Our team is currently performing some scheduled maintenance and upgrades. We'll be back online with a fresh new look and improved features soon!</p>
+      
+      <!-- Animated Tools -->
+      <div class="tools-container">
+        <div class="tool"><i class="fas fa-wrench" style="font-size: 2.5rem; color: var(--primary-color);"></i></div>
+        <div class="tool"><i class="fas fa-cog" style="font-size: 2.5rem; color: var(--secondary-color);"></i></div>
+        <div class="tool"><i class="fas fa-code" style="font-size: 2.5rem; color: var(--primary-color);"></i></div>
+        <div class="tool"><i class="fas fa-paint-brush" style="font-size: 2.5rem; color: var(--secondary-color);"></i></div>
+      </div>
+      
+      <!-- Progress Indicator -->
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+        <div class="timer" id="countdown">Estimated time remaining: <span id="time">1 hours</span></div>
+      </div>
+      
+      <div class="maintenance-actions">
+        <form id="notify-form" class="email-form" action="https://formspree.io/f/xyzeydpz" method="POST">
+          <input 
+            type="email" 
+            name="email" 
+            class="email-input" 
+            placeholder="Enter your email to be notified" 
+            required
+          >
+          <input type="hidden" name="message" value="Website under maintenance">
+          <button type="submit" id="notify-button" class="notification-button">
+            <i class="fas fa-bell"></i> Notify Me When Ready
+          </button>
+        </form>
+      </div>
+      
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <p>Need urgent assistance? Contact us:</p>
+        <div class="social-links">
+          <a href="mailto:lymashop5s9@gmail.com?subject=Website%20under%20maintenance"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+221776196418"><i class="fas fa-phone"></i></a>
+          <a href="tel:+221772470235"><i class="fas fa-phone"></i></a>
+        </div>        
+      </div>
+    </section>
+  </main>
+
+  <!-- JavaScript -->
+  <script src="loadingscreen.js"></script>
+  
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BBR472G721"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BBR472G721');
+</script>
+
+  <script>
+    // DOM Elements
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const toast = document.getElementById('toast');
+    const notifyForm = document.getElementById('notify-form');
+    const notifyButton = document.getElementById('notify-button');
+    const emailInput = document.querySelector('.email-input');
+
+    // Theme Toggle
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+      } else {
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+      }
+      
+      // Save preference to localStorage
+      localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+    });
+
+    // Check for saved theme preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      body.classList.add('dark-mode');
+      themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    // Toast Notification
+    function showToast(message, type = '') {
+      toast.innerHTML = message;
+      toast.className = 'toast';
+      
+      if (type) {
+        toast.classList.add(type);
+      }
+      
+      toast.classList.add('show');
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // Form Submission Handler
+    notifyForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Disable the button to prevent multiple submissions
+      notifyButton.disabled = true;
+      notifyButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      
+      // Get the form data
+      const formData = new FormData(notifyForm);
+      
+      // Send the form data to Formspree
+      fetch(notifyForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Network response was not ok.');
+      })
+      .then(data => {
+        // Success - Show success toast
+        showToast('<i class="fas fa-check-circle"></i> Thank you! We\'ll notify you when we\'re back online.', 'success');
+        
+        // Update button state
+        notifyButton.innerHTML = '<i class="fas fa-check"></i> You\'ll Be Notified';
+        notifyButton.disabled = true;
+        notifyButton.style.backgroundColor = '#28a745';
+        
+        // Clear the input
+        emailInput.value = '';
+      })
+      .catch(error => {
+        // Error - Show error toast
+        showToast('<i class="fas fa-exclamation-circle"></i> Something went wrong. Please try again.', 'error');
+        
+        // Re-enable the button
+        notifyButton.disabled = false;
+        notifyButton.innerHTML = '<i class="fas fa-bell"></i> Notify Me When Ready';
+      });
+    });
+
+    // Random countdown update
+    function updateCountdown() {
+      const countdownElement = document.getElementById('time');
+      const hours = Math.floor(Math.random() * 4) + 1;
+      const minutes = Math.floor(Math.random() * 60);
+      
+      countdownElement.textContent = `${hours} hour${hours !== 1 ? 's' : ''} ${minutes} minute${minutes !== 1 ? 's' : ''}`;
+    }
+
+    // Update countdown every minute (simulated progress)
+    setInterval(updateCountdown, 60000);
+
+    // Handle header height for responsive design
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get the actual height of the header
+      const header = document.querySelector('header');
+      const actualHeaderHeight = header.offsetHeight;
+      
+      // Update the CSS variable with the actual header height
+      document.documentElement.style.setProperty('--header-height', actualHeaderHeight + 'px');
+      
+      // Update padding-top of body
+      document.body.style.paddingTop = actualHeaderHeight + 'px';
+      
+      // Also update toast position
+      document.querySelector('.toast').style.top = (actualHeaderHeight + 20) + 'px';
+      
+      // Update on window resize
+      window.addEventListener('resize', function() {
+        const newHeaderHeight = header.offsetHeight;
+        document.documentElement.style.setProperty('--header-height', newHeaderHeight + 'px');
+        document.body.style.paddingTop = newHeaderHeight + 'px';
+        document.querySelector('.toast').style.top = (newHeaderHeight + 20) + 'px';
+      });
+
+      // Show a welcome notification
+      showToast('<i class="fas fa-info-circle"></i> Maintenance in progress. We\'ll be back soon!');
+    });
+  </script>
+</body>
+</html>
