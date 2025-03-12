@@ -1,22 +1,22 @@
 // service-worker.js
 const CACHE_NAME = 'lyma-shop-v2';
 const urlsToCache = [
-  '/lymashop.github.io/',
-  '/lymashop.github.io/index.html',
-  '/lymashop.github.io/404.html',
-  '/lymashop.github.io/403.html',
-  '/lymashop.github.io/500.html',
-  '/lymashop.github.io/502.html',
-  '/lymashop.github.io/cart.html',
-  '/lymashop.github.io/wishlist.html',
-  '/lymashop.github.io/about.html',
-  '/lymashop.github.io/contact.html',
-  '/lymashop.github.io/catalog.html',
-  '/lymashop.github.io/product.html',
-  '/lymashop.github.io/pwa-install-banner.js',
-  '/lymashop.github.io/cart.js',
-  '/lymashop.github.io/wishlist.js',
-  '/lymashop.github.io/loadingscreen.js',
+  '/',
+  '/index.html',
+  '/404.html',
+  '/403.html',
+  '/500.html',
+  '/502.html',
+  '/cart.html',
+  '/wishlist.html',
+  '/about.html',
+  '/contact.html',
+  '/catalog.html',
+  '/product.html',
+  '/pwa-install-banner.js',
+  '/cart.js',
+  '/wishlist.js',
+  '/loadingscreen.js',
   
   // Add your CSS, JS and main assets here
 ];
