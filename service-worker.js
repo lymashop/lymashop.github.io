@@ -86,7 +86,7 @@ self.addEventListener('fetch', (event) => {
           .catch(() => {
             // If fetch fails (offline), try to return the cached 404.html
             if (event.request.mode === 'navigate') {
-              return caches.match('/lymashop.github.io/404.html');
+              return caches.match('/lymashop\\.github\\.io/404\\.html');
             }
             // For non-navigation requests, just return whatever we have
             return response;
