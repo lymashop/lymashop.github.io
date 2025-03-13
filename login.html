@@ -525,9 +525,23 @@
       themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     }
 
+    // Function to escape HTML special characters
+    function escapeHTML(str) {
+      return str.replace(/[&<>"']/g, function(match) {
+        const escapeMap = {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;'
+        };
+        return escapeMap[match];
+      });
+    }
+
     // Toast Notification
     function showToast(message, type = '') {
-      toast.innerHTML = message;
+      toast.innerHTML = escapeHTML(message);
       toast.className = 'toast';
       
       if (type) {
