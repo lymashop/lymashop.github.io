@@ -6,10 +6,6 @@
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "display_override": ["window-controls-overlay"]
-  "edge_side_panel": {
-    "preferred_width": 300
-  }
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "icons": [
@@ -91,5 +87,27 @@
   },
   "installs_allowed_from": [
     "*"
-  ]
+  ],
+"display_override": ["window-controls-overlay"],
+
+"edge_side_panel": {
+  "preferred_width": 300
+},
+
+"file_handlers": {
+  "text": {
+    "extensions": [".txt", ".md"],
+    "types": ["text/plain"]
+  }
+},
+
+"handle_links": {
+  "urls": ["https://lymashop.github.io/*"],
+  "launch_handler": "navigate"
+},
+
+"protocol_handlers": [{
+  "protocol": "lymashop",
+  "url": "https://lymashop.github.io/?data=%s"
+}]
 }
