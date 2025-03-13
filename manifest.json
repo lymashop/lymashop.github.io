@@ -7,6 +7,9 @@
   "scope": "./",
   "display": "standalone",
   "display_override": ["window-controls-overlay"]
+  "edge_side_panel": {
+    "preferred_width": 300
+  }
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "icons": [
