@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#A78BFA" />
+    <meta
+      name="description"
+      content="Lyma Shop - Boutique en ligne de mode féminine, vêtements et accessoires."
+    />
+
+    <meta name="keywords" content="mode, boutique, vêtements, accessoires, femme" />
+    <meta name="author" content="BlueDISH Team" />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="google-site-verification" content="your-google-site-verification-code" />
+    <meta name="msvalidate.01" content="your-bing-site-verification-code" />
+    <meta name="yandex-verification" content="your-yandex-site-verification-code" />
+  
+    <meta name="theme-color" content="#A78BFA" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Lyma Shop" />
+    <meta name="apple-mobile-web-app-title" content="Lyma Shop" />
+    <meta name="msapplication-TileColor" content="#A78BFA" />
+    <meta name="msapplication-TileImage" content="/mstile-150x150.png" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+
+
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>Lyma Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=PT+Sans:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                light: '#A78BFA', // Light purple (e.g., buttons, accents on light theme)
+                DEFAULT: '#8B5CF6', // Medium purple (main brand color)
+                dark: '#7C3AED',   // Dark purple (e.g., text on light bg, primary buttons on dark theme)
+                darker: '#6D28D9' // Even darker purple (e.g., hover states)
+              },
+              secondary: {
+                light: '#F3E8FF', // Very light purple (backgrounds)
+                DEFAULT: '#E9D5FF', // Light purple (secondary elements)
+                dark: '#C084FC'    // Medium-light purple
+              },
+              accent: {
+                pink: '#F472B6',   // A vibrant pink for CTAs or highlights
+                teal: '#2DD4BF'    // A contrasting teal
+              },
+              neutral: {
+                light: '#F9FAFB', // Off-white
+                DEFAULT: '#F3F4F6', // Light gray
+                dark: '#374151',   // Medium gray
+                darker: '#1F2937'  // Dark gray
+              },
+              // Tailwind semantic colors for dark mode compatibility
+              slate: {
+                50: '#f8fafc',
+                100: '#f1f5f9',
+                200: '#e2e8f0',
+                300: '#cbd5e1',
+                400: '#94a3b8',
+                500: '#64748b',
+                600: '#475569',
+                700: '#334152',
+                800: '#1e293b',
+                900: '#0f172a'
+              }
+            },
+            fontFamily: {
+              sans: ['Poppins', 'PT Sans', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            },
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

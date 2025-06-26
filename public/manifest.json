@@ -1,0 +1,68 @@
+
+{
+  "short_name": "LymaShop",
+  "name": "Lyma Shop - Mode & Accessoires",
+  "description": "Votre boutique en ligne pour la mode féminine, vêtements et accessoires tendance.",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#A78BFA",
+  "background_color": "#ffffff",
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Voir le Panier",
+      "short_name": "Panier",
+      "description": "Accéder directement à votre panier d'achats",
+      "url": "/#/cart",
+      "icons": [{ "src": "/shortcut-cart-icon.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Nouveautés",
+      "short_name": "Catalogue",
+      "description": "Découvrir les derniers produits ajoutés",
+      "url": "/#/catalog",
+      "icons": [{ "src": "/shortcut-catalog-icon.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots" : [
+    {
+      "src": "/screenshot1.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Page d'accueil de Lyma Shop"
+    },
+    {
+      "src": "/screenshot2.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Page catalogue des produits"
+    }
+  ]
+}

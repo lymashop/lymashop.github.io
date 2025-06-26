@@ -1,0 +1,7 @@
+
+# See README.md for instructions on how to configure this file.
+User-agent: *
+Allow: /
+
+# Sitemap: Add your sitemap URL here once generated and live
+# Sitemap: https://your-domain.com/sitemap.xml
