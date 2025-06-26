@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyma Shop - Hors Connexion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { margin: 0; } /* Tailwind might add some by default */
+        .gradient-bg {
+            background: linear-gradient(135deg, #A78BFA 0%, #F472B6 100%);
+        }
+    </style>
+     <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                light: '#A78BFA',
+                DEFAULT: '#8B5CF6',
+                dark: '#7C3AED',
+                darker: '#6D28D9'
+              },
+              accent: {
+                pink: '#F472B6',
+              },
+            },
+          },
+        },
+      }
+    </script>
+</head>
+<body class="gradient-bg flex flex-col items-center justify-center min-h-screen text-white p-6">
+    <div class="bg-white/20 backdrop-blur-md p-8 sm:p-12 rounded-xl shadow-2xl text-center max-w-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 sm:h-24 sm:w-24 text-white mx-auto mb-6 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+        </svg>
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4">Lyma Shop</h1>
+        <p class="text-xl sm:text-2xl mb-3">Mode Hors Connexion</p>
+        <p class="text-md sm:text-lg mb-6">Il semble que vous soyez actuellement hors ligne.</p>
+        <p class="text-sm sm:text-md mb-8">Veuillez vérifier votre connexion internet pour accéder à toutes les fonctionnalités de Lyma Shop.</p>
+        <button 
+            onclick="window.location.reload()" 
+            class="bg-white text-primary-dark font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-opacity-90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+            Réessayer
+        </button>
+         <a href="/" class="block mt-4 text-sm text-white/80 hover:text-white underline">
+            Retour à l'accueil (si mis en cache)
+        </a>
+    </div>
+    <footer class="mt-12 text-center text-white/70 text-sm">
+        <p>&copy; 2024 Lyma Shop. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
